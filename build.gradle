@@ -1,15 +1,13 @@
 buildscript {
 
     repositories {
-
         google()
-
         mavenCentral()
     }
 
     dependencies {
 
-        classpath 'com.android.tools.build:gradle:7.2.1'
+        classpath 'com.android.tools.build:gradle:7.2.2'
     }
 }
 
@@ -60,7 +58,7 @@ android {
 
 dependencies {
     api 'com.google.zxing:core:3.3.3'
-    api 'androidx.annotation:annotation:1.4.0'
+    api 'androidx.annotation:annotation:1.5.0'
 }
 
 task sourcesJar(type: Jar) {

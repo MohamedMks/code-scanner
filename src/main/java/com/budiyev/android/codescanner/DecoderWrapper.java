@@ -31,6 +31,7 @@ final class DecoderWrapper {
 
     private final Camera mCamera;
     private final Camera.CameraInfo mCameraInfo;
+    //
     private final Decoder mDecoder;
     private final Point mImageSize;
     private final Point mPreviewSize;
