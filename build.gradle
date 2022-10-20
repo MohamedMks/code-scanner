@@ -25,7 +25,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
 ext {
-    libraryVersion = '2.3.2'
+    // libraryVersion = '2.3.2'
+    libraryVersion = '3.0.0'
     publishedGroupId = 'com.budiyev.android'
 }
 

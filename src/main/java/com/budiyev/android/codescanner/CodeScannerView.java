@@ -59,13 +59,13 @@ public final class CodeScannerView extends ViewGroup {
     private static final boolean DEFAULT_FRAME_VISIBLE = true;
     private static final boolean DEFAULT_FRAME_CORNERS_CAP_ROUNDED = false;
     private static final int DEFAULT_MASK_COLOR = 0x77000000;
-    private static final int DEFAULT_FRAME_COLOR = Color.WHITE;
-    private static final int DEFAULT_AUTO_FOCUS_BUTTON_COLOR = Color.WHITE;
-    private static final int DEFAULT_FLASH_BUTTON_COLOR = Color.WHITE;
+    private static final int DEFAULT_FRAME_COLOR = Color.YELLOW;
+    private static final int DEFAULT_AUTO_FOCUS_BUTTON_COLOR = Color.YELLOW;
+    private static final int DEFAULT_FLASH_BUTTON_COLOR = Color.YELLOW;
     private static final int HINT_VIEW_INDEX = 4;
     private static final int MAX_CHILD_COUNT = 5;
     private static final float DEFAULT_FRAME_THICKNESS_DP = 2f;
-    private static final float DEFAULT_FRAME_ASPECT_RATIO_WIDTH = 1f;
+    private static final float DEFAULT_FRAME_ASPECT_RATIO_WIDTH = 3f;
     private static final float DEFAULT_FRAME_ASPECT_RATIO_HEIGHT = 1f;
     private static final float DEFAULT_FRAME_CORNER_SIZE_DP = 50f;
     private static final float DEFAULT_FRAME_CORNERS_RADIUS_DP = 0f;
@@ -156,12 +156,15 @@ public final class CodeScannerView extends ViewGroup {
         mAutoFocusButton = new ImageView(context);
         mAutoFocusButton.setScaleType(ImageView.ScaleType.CENTER);
         mAutoFocusButton.setOnClickListener(new AutoFocusClickListener());
+
         mFlashButton = new ImageView(context);
         mFlashButton.setScaleType(ImageView.ScaleType.CENTER);
+
         mFlashButton.setOnClickListener(new FlashClickListener());
         if (attrs == null) {
             setFrameAspectRatio(DEFAULT_FRAME_ASPECT_RATIO_WIDTH,
-                    DEFAULT_FRAME_ASPECT_RATIO_HEIGHT);
+                                DEFAULT_FRAME_ASPECT_RATIO_HEIGHT);
+
             setMaskColor(DEFAULT_MASK_COLOR);
             setMaskVisible(DEFAULT_MASK_VISIBLE);
             setFrameColor(DEFAULT_FRAME_COLOR);
@@ -310,6 +313,7 @@ public final class CodeScannerView extends ViewGroup {
         }
         final int width = right - left;
         final int height = bottom - top;
+
         final Point previewSize = mPreviewSize;
         if (previewSize == null) {
             mPreviewView.layout(0, 0, width, height);
